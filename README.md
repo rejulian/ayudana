@@ -63,6 +63,7 @@ CREATE TABLE accommodations (
     address TEXT NOT NULL,
     capacity INTEGER NOT NULL,
     contact TEXT NOT NULL,
+    user_id UUID NOT NULL REFERENCES auth.users ON DELETE CASCADE
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
