@@ -9,7 +9,6 @@ const LocationMap = ({ accommodation }: { accommodation: Accommodation }) => {
     const [coordinates, setCoordinates] = React.useState<[number, number] | null>(null);
     const [map, setMap] = React.useState<LeafletMap | null>(null);
     const [error, setError] = React.useState<string>('');
-    const [loading, setLoading] = React.useState<boolean>(true);
 
     // Geocode the address to get coordinates
     React.useEffect(() => {
@@ -60,7 +59,6 @@ const LocationMap = ({ accommodation }: { accommodation: Accommodation }) => {
                     .addTo(mapInstance);
 
                 setMap(mapInstance);
-                setLoading(false)
             });
         }
 

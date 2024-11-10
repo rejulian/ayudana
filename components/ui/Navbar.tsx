@@ -7,7 +7,7 @@ import { House } from "lucide-react";
 export default async function NavBar() {
     const supabase = await createClient()
 
-    const { data: { user }, error } = await supabase.auth.getUser()
+    const { data: { user } } = await supabase.auth.getUser()
 
     return <nav className="flex gap-3 p-4 justify-end">
         {user ? <>
